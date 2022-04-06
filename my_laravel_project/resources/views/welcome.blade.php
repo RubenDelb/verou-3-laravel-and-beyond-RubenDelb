@@ -12,15 +12,30 @@
                     Borrow your neighbor's tools!
                 </div>
             </div>
-            <form action="" method="GET">
+            <form action="{{ route('search-tools') }}" method="POST">
                 @csrf
                 <div class="py-5 mt-6">
-                    <x-input id="tool" class="block mt-1 w-full" type="text" name="tool"
-                        placeholder="What are you looking for?" autofocus />
+                    <select class='w-full block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                            id="tool" name="tool" autofocus>
+                        <option value="hammer">Hammer</option>
+                        <option value="saw">Saw</option>
+                        <option value="screwdriver">Screwdriver</option>
+                    </select>
                 </div>
                 <div>
-                    <x-input id="city" class="block mt-1 w-full" type="text" name="city"
-                        placeholder="Where are you looking?" autofocus />
+                    <select class='w-full block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                            id="province" name="province" autofocus>
+                        <option value="West-Vlaanderen">West-Vlaanderen</option>
+                        <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+                        <option value="Antwerpen">Antwerpen</option>
+                        <option value="Limburg">Limburg</option>
+                        <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+                        <option value="Waals-Brabant">Waals-Brabant</option>
+                        <option value="Henegouwen">Henegouwen</option>
+                        <option value="Namen">Namen</option>
+                        <option value="Luik">Luik</option>
+                        <option value="Luxemburg">Luxemburg</option>
+                    </select>
                 </div>
                 <div class="flex items-center justify-between mt-4">
                     <a class="ml-1 underline" href="{{ route('register') }}">
