@@ -31,4 +31,18 @@ class ToolController extends Controller
         // dd($wishedTool);
         return view('reservation', compact('wishedTool'));
     }
+
+    public function addTool(Request $request)
+    {
+        $newTool = array(
+            'user_id' => auth()->id(),
+            'tool' => $request->tool,
+            'province' => $request->province,
+            'available' => 1,
+        );
+
+        Tool::create($newTool);
+
+        return view('add-tool');
+    }
 }
