@@ -9,8 +9,13 @@ class Tool extends Model
 {
     use HasFactory;
 
+    public function user()
+    {
+        return $this->belongsTo(User::class)->select(['id', 'name', 'email']);
+    }
+
     protected $fillable = [
-        'user-id',
+        'user_id',
         'tool',
         'province',
         'available',
