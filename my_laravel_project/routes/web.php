@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', function () {
     return view('dashboard');
     })->name('dashboard');
+
+    Route::post('/searched-tools', [ToolController::class, 'index'])->name('search-tools');
+
+    Route::get('/reservation/toolId={toolId}', [ToolController::class, 'reserveTool'])->name('reserve-tool');
 
     Route::view('profile', 'profile')->name('profile');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
