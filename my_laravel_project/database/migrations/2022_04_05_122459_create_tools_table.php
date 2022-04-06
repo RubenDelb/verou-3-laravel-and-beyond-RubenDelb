@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
-            $table->integer('user-id');
+            $table->integer('user_id');
             $table->string('tool');
             $table->string('province');
             $table->boolean('available')->default(1);
