@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="images/logo.png" alt="Logo" width="120" height="120">
+                        <img src="/images/logo.png" alt="Logo" width="80" height="80">
                     </a>
                 </div>
 
@@ -14,10 +14,15 @@
                 @isset(Auth::user()->name)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Search Tool') }}
                     </x-nav-link>
                 </div>
                 @endisset
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('add-tool')" :active="request()->routeIs('add-tool')">
+                        {{ __('Add Tool') }}
+                    </x-nav-link>
+                </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
                         {{ __('About Us') }}
@@ -81,7 +86,17 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Search Tool') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('add-tool')" :active="request()->routeIs('add-tool')">
+                {{ __('Add Tool') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
+                {{ __('About Us') }}
             </x-responsive-nav-link>
         </div>
 
