@@ -34,6 +34,9 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/reservation/toolId={toolId}', [ToolController::class, 'reserveTool'])->name('reserve-tool');
 
+    Route::view('/add-tool', 'add-tool')->name('add-tool-view');
+    Route::post('/add-tool', [ToolController::class, 'addTool'])->name('add-tool');
+
     Route::view('profile', 'profile')->name('profile');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
 });
