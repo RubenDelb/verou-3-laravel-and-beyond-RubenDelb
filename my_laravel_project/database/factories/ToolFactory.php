@@ -17,7 +17,7 @@ class ToolFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => random_int(1,20),
+            'user_id' => random_int(1,22),
             // 'tool' => $this->faker->text(),
             'tool' => $this->faker->randomElement(['Hammer', 'Saw', 'Screwdriver']),
             'province' => $this->faker->randomElement(['West-Vlaanderen', 'Oost-Vlaanderen', 'Antwerpen', 'Vlaams-Brabant', 'Limburg', 'Waals-Brabant', 'Henegouwen', 'Luik', 'Luxemburg', 'Namen']),
