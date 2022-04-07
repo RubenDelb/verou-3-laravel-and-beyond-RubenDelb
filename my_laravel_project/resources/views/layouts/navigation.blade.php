@@ -19,7 +19,7 @@
                 </div>
                 @endisset
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('add-tool')" :active="request()->routeIs('add-tool')">
+                    <x-nav-link :href="route('add-tool-view')" :active="request()->routeIs('add-tool-view')">
                         {{ __('Add Tool') }}
                     </x-nav-link>
                 </div>
@@ -90,7 +90,7 @@
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('add-tool')" :active="request()->routeIs('add-tool')">
+            <x-responsive-nav-link :href="route('add-tool-view')" :active="request()->routeIs('add-tool-view')">
                 {{ __('Add Tool') }}
             </x-responsive-nav-link>
         </div>
