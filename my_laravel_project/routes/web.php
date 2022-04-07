@@ -25,7 +25,7 @@ Route::get('/about-us', function () {
     return view('about-us');
 })->name('about-us');
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function() {
     Route::get('/dashboard', function () {
     return view('dashboard');
     })->name('dashboard');
@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::view('/add-tool', 'add-tool')->name('add-tool-view');
     Route::post('/add-tool', [ToolController::class, 'addTool'])->name('add-tool');
 
-    Route::view('profile', 'profile')->name('profile');
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
