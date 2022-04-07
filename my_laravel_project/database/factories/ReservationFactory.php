@@ -17,7 +17,9 @@ class ReservationFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'tool_id' => random_int(1,200),
+            // 'tool' => $this->faker->text(),
+            'borrowed_by_user_id' => random_int(1,22),
         ];
     }
 }

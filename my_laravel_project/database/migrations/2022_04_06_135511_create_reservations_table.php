@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->integer('tool_id');
+            $table->integer('borrowed_by_user_id');
+            $table->string('status')->default('Active');
             $table->timestamps();
         });
     }
