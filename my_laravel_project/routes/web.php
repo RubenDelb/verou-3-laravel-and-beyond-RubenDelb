@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // Route::redirect('/','login');
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('dashboard');
 
 Route::get('/about-us', function () {
     return view('about-us');
@@ -28,7 +28,7 @@ Route::get('/about-us', function () {
 Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function() {
     Route::get('/dashboard', function () {
     return view('dashboard');
-    })->name('dashboard');
+    });
 
     Route::post('/searched-tools', [ToolController::class, 'index'])->name('search-tools');
 
