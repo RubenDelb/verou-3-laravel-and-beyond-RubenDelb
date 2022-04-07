@@ -1,34 +1,35 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-blue-100 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex ">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="/images/logo.png" alt="Logo" width="80" height="80">
+                        <img src="/images/logo.png" alt="Logo" width="100" height="100">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                @isset(Auth::user()->name)
+                @auth
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Search Tool') }}
                     </x-nav-link>
                 </div>
-                @endisset
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('add-tool-view')" :active="request()->routeIs('add-tool-view')">
                         {{ __('Add Tool') }}
                     </x-nav-link>
                 </div>
+                @endauth
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
                         {{ __('About Us') }}
                     </x-nav-link>
                 </div>
             </div>
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -64,7 +65,7 @@
                 </x-dropdown>
                 @else
                 <!-- dsfqsdf -->
-                        <button class="flex items-center align-right text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                        <button class="flex flex-row-reverse align-right justify-end text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 <a href="{{ route('login') }}">Login</a>
                         </button>
                 @endif
@@ -84,6 +85,7 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        @auth
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Search Tool') }}
@@ -94,6 +96,7 @@
                 {{ __('Add Tool') }}
             </x-responsive-nav-link>
         </div>
+        @endauth
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
                 {{ __('About Us') }}
@@ -125,7 +128,9 @@
                 </form>
             </div>
             @else
-                <div>LOGIN</div>
+            <x-responsive-nav-link :href="route('login')">
+                {{ __('Login') }}
+            </x-responsive-nav-link>
             @endif
         </div>
     </div>
