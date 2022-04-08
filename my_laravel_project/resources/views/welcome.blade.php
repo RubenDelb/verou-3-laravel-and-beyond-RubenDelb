@@ -8,13 +8,14 @@
     @endauth
 
     <div class="bg-[url('/images/background.jpg')] bg-cover bg-no-repeat">
-        <div class="py-12 ">
-            <div class="mx-auto sm:px-6 lg:px-8 max-w-lg sm:w-full">
-                <div class="mt-4 text-center">
-                    <div class="text-xl sm:text-3xl font-extrabold text-white">
-                        Borrow your neighbor's tools!
-                    </div>
+        <div class="py-12 min-h-[85vh] grid place-content-center">
+            <div class="text-center mb-10">
+                <div class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white">
+                    Borrow your neighbor's tools!
                 </div>
+            </div>
+            <div class="mx-auto sm:px-6 max-w-lg w-full">
+
                 <form action="{{ route('search-tools') }}" method="POST">
                     @csrf
                     <div class="py-5 mt-6">
@@ -55,29 +56,32 @@
         </div>
         <div>
             <div class="bg-blue-50/25 pb-6">
-                <div class="row mx-5">
-                    <div class="col-12">
+                <div class="mx-5">
+                    <div>
                         <div class="text-2xl pt-6 text-center font-extrabold text-neutral-900 italic">Customer Experiences</div>
                     </div>
                 </div>
                 <br>
-                <div class="flex flex-col sm:flex-row mx-4 rounded">
-                    <div class="text-center flex justify-center flex-1 sm:rounded bg-stone-100 sm:mr-2 sm:hover:scale-[1.03]">
-                        <div class="pt-4 grid mx-6 max-w-sm">
-                            <p class="text-neutral-900">"I am very happy with this service from start till end. The way they communicated was excellent. I am so gratefull that Neighbourly exists!"</p>
-                            <p class="py-3 text-sm"><b>- Monique Lhullier -</b></p>
+                <div class="smmax:snap-x smmax:snap-mandatory smmax:h-80 smmax:w-screen mx-auto smmax:overflow-scroll flex sm:justify-around sm:flex-row sm:mx-4 sm:rounded">
+                    <div class="smmax:snap-start smmax:w-screen smmax:flex-shrink-0 smmax:h-auto smmax:items-center sm:m-2 justify-center text-center flex sm:flex-1 sm:rounded sm:bg-stone-100 bg-stone-100/75 sm:max-w-md sm:hover:scale-[1.01]">
+                        <div class="pt-4 flex flex-col items-center justify-evenly mx-6">
+                            <img class="w-32 m-4 rounded-full sm:border sm:border-gray-100 shadow-sm text-center" src="\images\joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="">
+                            <p class="text-neutral-900 max-w-xs pb-4">"I am very happy with this service from start till end. The way they communicated was excellent. I am so gratefull that Neighbourly exists!"</p>
+                            <p class="text-sm pb-4"><b>- Juan Hernandez -</b></p>
                         </div>
                     </div>
-                    <div class="text-center flex justify-center flex-1 sm:rounded bg-stone-100 sm:mr-2 sm:hover:scale-[1.03]">
-                        <div class="pt-4 grid mx-6 max-w-sm">
-                            <p class="text-neutral-900">"I am very happy with this service from start till end. The way they communicated was excellent. I am so gratefull that Neighbourly exists!"</p>
-                            <p class="py-3 text-sm"><b>- Monique Lhullier -</b></p>
+                    <div class="smmax:snap-start smmax:w-screen smmax:flex-shrink-0 smmax:h-auto smmax:items-center sm:m-2 justify-center text-center flex sm:flex-1 sm:rounded sm:bg-stone-100 bg-stone-100/75 sm:max-w-md sm:hover:scale-[1.01]">
+                        <div class="pt-4 flex flex-col items-center justify-evenly mx-6">
+                            <img class="w-32 m-4 rounded-full sm:border sm:border-gray-100 shadow-sm text-center" src="\images\nicolas-horn-MTZTGvDsHFY-unsplash.jpg" alt="">
+                            <p class="text-neutral-900 max-w-xs pb-4">"I am very happy with this service from start till end. The way they communicated was excellent. I am so gratefull that Neighbourly exists!"</p>
+                            <p class="text-sm pb-4"><b>- Jonathan Smith -</b></p>
                         </div>
                     </div>
-                    <div class="text-center flex justify-center flex-1 sm:rounded bg-stone-100 sm:hover:scale-[1.03]">
-                        <div class="pt-4 grid mx-6 max-w-sm">
-                            <p class="text-neutral-900">"I am very happy with this service from start till end. The way they communicated was excellent. I am so gratefull that Neighbourly exists!"</p>
-                            <p class="py-3 text-sm"><b>- Monique Lhullier -</b></p>
+                    <div class="smmax:snap-start smmax:w-screen smmax:flex-shrink-0 smmax:h-auto smmax:items-center sm:m-2 justify-center text-center flex sm:flex-1 sm:rounded sm:bg-stone-100 bg-stone-100/75 sm:max-w-md sm:hover:scale-[1.01]">
+                        <div class="pt-4 flex flex-col items-center justify-evenly mx-6">
+                            <img class="w-32 m-4 rounded-full sm:border sm:border-gray-100 shadow-sm text-center" src="/images/jake-nackos-IF9TK5Uy-KI-unsplash.jpg" alt="">
+                            <p class="text-neutral-900 max-w-xs pb-4">"I am very happy with this service from start till end. The way they communicated was excellent. I am so gratefull that Neighbourly exists!"</p>
+                            <p class="text-sm pb-4"><b>- Marilynn Gonzalez -</b></p>
                         </div>
                     </div>
                 </div>
@@ -85,22 +89,47 @@
         </div>
     </div>
     <div class="grid sm:grid-cols-2 text-center bg-stone-50  py-6">
-        <div>
-            <h3 class="text-xl font-bold text-center">Be'come' a Lender</h3>
-        </div>
-        <div class="px-5">
-            <h4 class="text-xl font-bold text-center">Contact-us</h4>
-            <form class="contactForm" action="https://formspree.io/f/xlezdzkd" method="post">
-                <h5 class="italic mb-3 mt-5">Your message:</h5>
-                <textarea class="rounded-md w-full shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Type your message here" name="Your message" id="" cols="30" rows="10"></textarea>
+        <section>
+            <div>
+                <a href="{{route('add-tool')}}" class="text-2xl font-bold text-center italic underline">Be'come' a Lender</a>
+            </div>
+            <section class="grid sm:grid-rows-3 w-full h-full py-6">
+                <div class="grid  place-items-center grid-cols-2">
+                    <div>
+                        <h3 class="text-2xl font-extrabold">Honesty</h3>
+                        <p class="text-sm smmax:hidden mt-2">One of the most basic core values is honesty. Honesty is demonstrated by what we say and by what we do.</p>
+                    </div>
+                    <img class="w-24" src="\images\trust.png" alt="">
+                </div>
+                <div class="grid place-items-center grid-cols-2 my-2 py-2">
+                    <img class="w-24" src="\images\focus.png" alt="">
+                    <div>
+                        <h3 class="text-2xl font-extrabold">Respect</h3>
+                        <p class="text-sm smmax:hidden mt-2">We value everyone and treat people with dignity and professionalism.</p>
+                    </div>
+                </div>
+                <div class="grid place-items-center grid-cols-2">
+                    <div>
+                        <h3 class="text-2xl font-extrabold">Simplicity</h3>
+                        <p class="text-sm smmax:hidden mt-2">We strive for simplicity in all things: communication, reservations & the processes.</p>
+                    </div>
+                    <img class="w-24" src="\images\puzzle.png" alt="">
+                </div>
+            </section>
+        </section>
+        <div class="px-8 smmax:mt-8 smmax:pt-8 smmax:border-t-2">
+            <h4 class="text-2xl italic underline font-bold text-center">Contact us</h4>
+            <section class="my-4">
+                <h5 class="italic mt-5">Your message:</h5>
+                <textarea class="my-4 caret-slate-100 rounded-md w-full shadow-sm border-gray-300 focus:border-teal-700 focus:ring focus:ring-teal-700 focus:ring-opacity-50" placeholder="Type your message here" name="Your message" rows="10"></textarea>
                 <br>
                 <label class="italic" for="email">Your Email: </label>
-                <input class="contactItem mailItem ms-4 px-2 text-center" name="Email" id="email" type="email" placeholder="example@gmail.com">
+                <input class="mx-4 px-2 text-center" name="Email" id="email" type="email" placeholder="example@gmail.com">
                 <x-button>Submit</x-button>
-
-
-            </form>
-            <a class="text-center phoneNumber" href="tel:++32 498 76 54 321">+32 498 76 54 321</a>
+            </section>
+            @auth
+                <a class="text-center" href="tel:+32 498 76 54 321">Tel: +32 498 76 54 321</a>
+            @endauth
         </div>
     </div>
 </x-app-layout>
