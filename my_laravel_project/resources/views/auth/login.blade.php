@@ -1,8 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <img src="images/logo.png" alt="Logo" width="150" height="150">
+            <a  href="/">
+                <img class="sm:hover:rotate-12 sm:duration-1000 w-44 sm:w-56" src="images/logo.png" alt="Logo">
             </a>
         </x-slot>
 
