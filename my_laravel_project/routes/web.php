@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,21 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::redirect('/','login');
 Route::get('/', function () {
     return view('welcome');
-})->name('dashboard');
+})->name('home');
 
 Route::get('/about-us', function () {
     return view('about-us');
 })->name('about-us');
 
-Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function() {
-    Route::get('/dashboard', function () {
-    return view('dashboard');
-    });
+Route::post('/searched-tools', [ToolController::class, 'index'])->name('search-tools');
 
-    Route::post('/searched-tools', [ToolController::class, 'index'])->name('search-tools');
+Route::group(['middleware' => 'auth'], function() { //if I add 'middleware' => 'verified', only logged-in users are allowed on these routes
 
     Route::get('/reservation/toolId={toolId}', [ToolController::class, 'reserveTool'])->name('reserve-tool');
 
