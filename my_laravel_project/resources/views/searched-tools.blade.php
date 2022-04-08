@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="sm:py-12">
+    <div class="sm:py-12 min-h-[80vh] grid place-content-center">
         <div class="mx-auto sm:px-6 lg:px-8 sm:max-w-lg">
             <div class="mt-4 text-center">
                 <div class="text-xl sm:text-3xl font-extrabold">
