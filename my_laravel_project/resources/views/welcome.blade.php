@@ -125,7 +125,7 @@
                 <br>
                 <label class="italic" for="email">Your Email: </label>
                 <input class="mx-4 px-2 text-center" name="Email" id="email" type="email" placeholder="example@gmail.com">
-                <x-button>Submit</x-button>
+                <x-button class="mt-2">Submit</x-button>
             </section>
             @auth
                 <a class="text-center" href="tel:+32 498 76 54 321">Tel: +32 498 76 54 321</a>

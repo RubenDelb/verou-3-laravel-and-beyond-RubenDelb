@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="py-12">
-        <div class="mx-auto sm:px-6 lg:px-8 max-w-lg sm:w-full">
+    <div class="py-12 h-screen">
+        <div class="mx-auto sm:px-6 lg:px-8 max-w-lg sm:w-full ">
             <div class="mt-4 text-center">
                 <div class="text-xl sm:text-3xl font-extrabold">
                     Confirm your reservation.
